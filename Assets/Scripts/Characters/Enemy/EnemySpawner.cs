@@ -1,11 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : Enemy
 {
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private Enemy _enemyPrefab;
+    [SerializeField] private GameObject _summonEffect;
+    private float _summonDuration = 1f;
 
     private void Start()
     {
@@ -16,13 +17,16 @@ public class EnemySpawner : Enemy
     {
         while (true)
         {
-            SpawnEnemy();
+            yield return StartCoroutine(SummonAndSpawn());
             yield return new WaitForSeconds(20f);
         }
     }
 
-    private void SpawnEnemy()
+    private IEnumerator SummonAndSpawn()
     {
+       _summonEffect.SetActive(true);
+       
+        yield return new WaitForSeconds(_summonDuration);
         Instantiate(_enemyPrefab, _spawnPoint.position, _spawnPoint.rotation);
     }
 }

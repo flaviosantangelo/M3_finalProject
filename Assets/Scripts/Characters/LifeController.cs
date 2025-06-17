@@ -29,8 +29,7 @@ public class LifeController : MonoBehaviour
     {
         _currentHp -= damage;
         if (_currentHp <= 0)
-        {
-            Debug.Log("Enemy è stato sconfitto!");
+        {;
             Destroy(gameObject);
         }
     }

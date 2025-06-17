@@ -26,6 +26,6 @@ public class EnemyAnimation : MonoBehaviour
             else
                 _animator.Play("enemy_walk_front"); 
         }
-
-    }
+    
+    }   
 }
