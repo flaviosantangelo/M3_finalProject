@@ -1,3 +1,0 @@
-Impostando i RB2D dei nemici come Dynamic, rispettano i collider della tilemap ma seguono direzioni poco coerenti ed intelligenti (avrei forse dovuto implementare un movimento a waypoints).
-Impostandoli come Kinematic, il problema non si pone ma non rispettando i collider della tilemap, non mi piaceva l'effetto.
-Ho preferito il primo metodo
